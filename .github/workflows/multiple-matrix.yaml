@@ -1,4 +1,4 @@
-name: Matrix
+name: Multiple Matrix
 on: [workflow_dispatch]
 
 jobs:
