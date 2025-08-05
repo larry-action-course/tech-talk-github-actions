@@ -8,8 +8,10 @@ jobs:
       matrix:
         node-version: [12, 13, 14]
     steps:
-      - run: node -v
+      - name: Run default node version on the machine
+        run: node -v
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: node -v
+      - name: Run specific node version
+        run: node -v
