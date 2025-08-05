@@ -1,0 +1,22 @@
+name: Parallel Test
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: "Test suite to run"
+        required: true
+        type: choice
+        options:
+          - regression
+          - smoke
+          - e2e
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        suite: [parte 1, parte 2, parte 3]
+    steps:
+      - name: Print selected suite
+        run: echo "run "${{ github.event.inputs.suite }}_${{ matrix.suite }}""
